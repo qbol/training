@@ -1,0 +1,41 @@
+//description: ukazatel
+
+#include <iostream> 
+#include <stdio.h>              
+#include <locale>
+using namespace std;
+
+////// Basic function //////
+int main ()
+{
+    setlocale(LC_ALL,".1251"); //local
+    
+    int a=5;
+    
+    cout << &a << endl; //unarnoe raziminovanie = adress
+    
+    int* pa = NULL; //obivlenie ukazateli
+    pa=&a; //prisvaivanie ukazateli adres peremennoi
+    
+    cout << *pa << endl; //raziminovanie = poluchi znachenie
+    ////////////////////
+    
+    int mas[3] = {1,2,3};
+    int* pmas;
+    
+    pmas = mas; //togdestveno pmas=&mas[0]
+    
+    cout << *pmas << endl << endl;
+    //or all mas
+    for (int i=0; i<=2;i++)
+    {
+        cout << *(pmas+i);
+        } cout << endl;
+    ////////////////////
+    
+    
+    
+    system ("pause");
+    return 0;    
+ }
+     
