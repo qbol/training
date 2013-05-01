@@ -1,0 +1,40 @@
+//description: allocation memory
+               
+#include <iostream>
+#include <stdio.h>
+#include <locale>
+using namespace std;
+
+
+////// Basic function //////
+int main ()
+{
+    setlocale(LC_ALL,".1251"); //local
+    
+    
+    int count;
+    
+    cout << "Input elements count: ";
+    cin >> count;
+    
+    int* pmas  = new int [count];
+    
+    ///mas initialization
+    for (int i=0;i < count; i++)
+    {
+        cin >> *(pmas + i);
+        }
+        
+    //output mas
+    for (int i=0;i < count; i++)
+    {
+        cout << *(pmas + i) << "\t";
+        } cout << endl;
+    
+    // take, give    3
+    
+    delete[] pmas;
+    
+    system ("pause");
+    return 0;    
+ }
