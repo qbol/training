@@ -1,0 +1,40 @@
+/*
+  Name: 
+  Copyright: 
+  Author: 
+  Date: 01.05.13 11:53
+  Description: 
+*/
+
+               
+#include <iostream>
+#include <stdio.h>
+#include <locale>
+using namespace std;
+
+
+//#include <math.h>
+//#include <string>
+//#include <string.h>
+//#include <windows.h>
+
+
+int function ()
+{
+    
+    return 0;
+}
+
+
+
+////// Basic function //////
+int main ()
+{
+    setlocale(LC_ALL,".1251"); //local
+    
+    
+    
+    system ("pause");
+    return 0;    
+ }
+     
