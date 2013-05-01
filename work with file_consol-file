@@ -1,0 +1,67 @@
+//description: zapishet v file vvedenii str postrochno i vivodim na consol
+               
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale>
+using namespace std;
+
+int check_file (FILE *fp)
+{
+    //file exists =1
+    //file no     =0
+    
+    if ((fp = fopen ("test.txt", "r")) == NULL)
+    {
+    cout << "Error opening file" << endl;
+    return 0;
+    }
+    else
+    cout << "File open: ./test.txt" << endl;
+    return 1;
+}
+
+
+////// Basic function //////
+int main ()
+{
+    setlocale(LC_ALL,".1251"); //local
+    FILE *fp;
+    
+    if ((check_file (fp)) == 0) //proverim mojno li open file
+    {                          //or = est li on (a esli net prav na read ?)
+    system ("pause");
+    return -1;
+    }
+    
+    fp = fopen ("test.txt", "a+");
+    
+    char str[80];
+    
+    
+    cout << "Input string\n" << endl;
+    cout << "For exit enter an empty str\n" << endl;
+    
+    do
+    {
+    gets (str);
+    strcat (str, "\n");
+    fputs (str, fp);
+    } while (*str != '\n');
+    
+    rewind (fp);
+    
+    while (!feof(fp))
+    {
+    fgets (str, 79,fp);
+    cout << str;
+    }
+    
+    fclose (fp);
+    if (ferror (fp) == 1) cout << "error" << endl;
+    
+    system ("pause");
+    return 0;    
+ }
+     
