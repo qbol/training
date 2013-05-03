@@ -1,0 +1,41 @@
+//description: работает но пока не понятно почему 
+             //int берет так много а long не добирает  
+#include <iostream>
+#include <locale>
+using namespace std;
+
+#include <stdio.h > /*В stdio.h объявлена функция gets*/
+#include <stdlib.h> /*В stdlib.h объявлены функции преобразования строк */
+
+
+////// Basic function //////
+int main ()
+{
+    setlocale(LC_ALL,".1251"); //local
+    
+    char c[80]; /*Объявление строки из 10 элементов*/
+    
+    // преобразование в int
+    int number;
+    printf ("Введите строку для преобразования в число \n");
+    gets (c);
+    if ((number=atoi(c))==0)
+    printf ("ERROR \n");
+    else
+    printf ("преобразованно в число \n%d \n ====== \n", number);
+    
+    
+    // преобразование в long
+    unsigned long age;
+    printf ("Введите строку для преобразования в число \n");
+    gets (c);
+    if ((age=atol(c))==0)
+    printf ("ERROR \n");
+    else
+    printf ("преобразованно в число \n%u \n ====== \n", age);
+    
+    
+    system ("pause");
+    return 0;    
+ }
+     
