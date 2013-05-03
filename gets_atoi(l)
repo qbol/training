@@ -1,5 +1,5 @@
 //description: работает но пока не понятно почему 
-             //int берет так много а long не добирает  
+             //int берет так много а long не добирает
 #include <iostream>
 #include <locale>
 using namespace std;
